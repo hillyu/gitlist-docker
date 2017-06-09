@@ -12,6 +12,7 @@ ADD nginx.conf /etc/
 #ADD php7-fpm.conf /etc/php7/
 RUN mkdir -p /repos/sentinel && chown -R 1001:0 /repos/sentinel && \
         cd /repos/sentinel; git --bare init . && \
+        chmod -R 775 /repos && \
         chmod -R 775 /var/log && \
         chmod -R 775 /var/tmp && \
         chmod -R 775 /var/lib/nginx && \
