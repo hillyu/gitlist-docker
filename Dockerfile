@@ -10,7 +10,7 @@ RUN cd /var/www; tar -zxvf gitlist-master.tar.gz && \
         cd /var/www/gitlist/; mkdir cache; chmod 777 cache
 ADD nginx.conf /etc/
 #ADD php7-fpm.conf /etc/php7/
-RUN adduser -D -u 1000 -G www-data www-data && mkdir -p /repos/sentinel && chown -R www-data /repos/sentinel && \
+RUN adduser -D -G www-data www-data && mkdir -p /repos/sentinel && chown -R www-data /repos/sentinel && \
         cd /repos/sentinel; git --bare init . && \
         chown -R www-data /var/log && \
         chown -R www-data /var/tmp && \
