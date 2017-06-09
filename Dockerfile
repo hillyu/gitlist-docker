@@ -12,6 +12,7 @@ ADD nginx.conf /etc/
 RUN mkdir -p /repos/sentinel
 RUN cd /repos/sentinel; git --bare init .
 
-CMD service php5-fpm restart; nginx -c /etc/nginx.conf
+#CMD service php5-fpm restart; nginx -c /etc/nginx.conf
+CMD service php5-fpm restart; service nginx restart
 
 
