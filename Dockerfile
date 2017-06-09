@@ -21,7 +21,6 @@ RUN mkdir -p /repos/sentinel && chown -R 1001:0 /repos/sentinel && \
 
 WORKDIR /var/www/gitlist/
 USER 1001
-#CMD service php75-fpm restart; nginx -c /etc/nginx.conf
 EXPOSE 8080
 CMD php-fpm7 --fpm-config /etc/php7/php-fpm.conf; nginx -c /etc/nginx.conf
 
